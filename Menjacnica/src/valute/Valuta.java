@@ -46,7 +46,7 @@ public class Valuta {
 
 	public void setKurs(String kurs) {
 		if(kurs== null || (!kurs.equals("prodajni") && !kurs.equals("srednji") && !kurs.equals("kupovni")))
-			throw new RuntimeException("Greska pri unosu kursa.");
+			throw new RuntimeException("Greska pri unosu kursa. Kurs moze biti prodajni, kupovni ili srednji.");
 		this.kurs = kurs;
 	}
 
