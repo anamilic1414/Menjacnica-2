@@ -15,6 +15,8 @@ public class Valuta {
 	}
 
 	public void setNaziv(String naziv) {
+		if(naziv== null || naziv.isEmpty())
+			throw new RuntimeException("Greska pri unosu naziva.");
 		this.naziv = naziv;
 	}
 
@@ -23,6 +25,8 @@ public class Valuta {
 	}
 
 	public void setSkracenica(String skracenica) {
+		if(skracenica==null || skracenica.isEmpty())
+			throw new RuntimeException("Greska pri unosu skracenice.");
 		this.skracenica = skracenica;
 	}
 
@@ -31,6 +35,8 @@ public class Valuta {
 	}
 
 	public void setDatum(GregorianCalendar datum) {
+		if(datum == null)
+			throw new RuntimeException("Greska pri unosu datuma.");
 		this.datum = datum;
 	}
 
@@ -39,6 +45,8 @@ public class Valuta {
 	}
 
 	public void setKurs(String kurs) {
+		if(kurs== null || (!kurs.equals("prodajni") && !kurs.equals("srednji") && !kurs.equals("kupovni")))
+			throw new RuntimeException("Greska pri unosu kursa.");
 		this.kurs = kurs;
 	}
 
@@ -47,6 +55,8 @@ public class Valuta {
 	}
 
 	public void setIznos(double iznos) {
+		if(iznos<0)
+			throw new RuntimeException("Greska pri unosu iznosa.");
 		this.iznos = iznos;
 	}
 
