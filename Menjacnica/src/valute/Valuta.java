@@ -71,9 +71,6 @@ public class Valuta {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((datum == null) ? 0 : datum.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(iznos);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((kurs == null) ? 0 : kurs.hashCode());
 		result = prime * result + ((naziv == null) ? 0 : naziv.hashCode());
 		return result;
@@ -93,8 +90,6 @@ public class Valuta {
 				return false;
 		} else if (!datum.equals(other.datum))
 			return false;
-		if (Double.doubleToLongBits(iznos) != Double.doubleToLongBits(other.iznos))
-			return false;
 		if (kurs == null) {
 			if (other.kurs != null)
 				return false;
@@ -107,6 +102,9 @@ public class Valuta {
 			return false;
 		return true;
 	}
+
+	
+	
 
 	
 }
